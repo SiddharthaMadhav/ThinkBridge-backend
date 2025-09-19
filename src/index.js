@@ -1,12 +1,14 @@
 const express = require("express");
 require("dotenv").config();
 const mysql = require("mysql2/promise");
+const cors = require("cors");
 
 const swaggerUi = require("swagger-ui-express");
 const swaggerJSDoc = require("swagger-jsdoc");
 
 const app = express();
 const port = 3000;
+app.use(cors());
 
 const dbConfig = {
   host: process.env.DB_HOST,
